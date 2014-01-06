@@ -6,11 +6,11 @@ import spock.lang.Specification
  */
 class Problem4Spec extends Specification {
 
-    def "1001 is palindrome" () {
+    def "Problem 4 - 1001 is palindrome" () {
         expect: Problem4.isPalindrome(1001)
 
     }
-    def "12 is not palindrome" () {
+    def "Problem 5 - 12 is not palindrome" () {
         expect: !Problem4.isPalindrome(12)
     }
     def "Problem 4 Correct Answer" () {
@@ -18,6 +18,13 @@ class Problem4Spec extends Specification {
 
     expect:
     assert Problem4.answer() ==906609
+    }
+
+
+
+    def "Problem 5 Correct Answer"() {
+    expect:
+        assert Problem5.answer()==232792560
     }
 
 }

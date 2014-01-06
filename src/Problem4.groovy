@@ -4,7 +4,7 @@
 class Problem4 {
 
     static boolean isPalindrome(int n) {
-        if (n.toString() == n.toString.reverse()){
+        if ((new Integer(n)).toString() == (new Integer(n)).toString().reverse()){
             return true;
         }
         return false;

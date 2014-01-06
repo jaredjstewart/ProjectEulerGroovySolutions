@@ -1,44 +1,28 @@
-/**
- * Created by Jared on 1/5/14.
+/** Problem 3
+ *The prime factors of 13195 are 5, 7, 13 and 29.
+ *What is the largest prime factor of the number 600851475143 ?
  */
 class Problem3 {
-    BigInteger numberToFactor
-    def primes = []
 
+    def static answer(BigInteger n) {
+        return factor(n).last()
 
-    Problem3(BigInteger numberToFactor) {
-        this.numberToFactor = numberToFactor
     }
 
+    def static factor(BigInteger n) {
+        int divisor = 1
+        def factors = []
 
-    def generatePrimes() {
-        primes = []
-        for (int i = 2; i < (int) Math.sqrt(numberToFactor); i++) {
-            boolean isPrimeNumber = true;
-
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    isPrimeNumber = false;
-                    break; // exit the inner for loop
-                }
-            }
-
-            if (isPrimeNumber) {
-                primes << i;
+        while (n > 1) {
+            BigInteger it
+            divisor += 1
+            while (n % divisor == 0) {
+                factors << divisor
+                n /= divisor
             }
         }
-    }
+        return factors
 
-    def findLargestPrimeDivisor() {
-        int largestPrimeDivisor = 1
-        for (int prime : primes) {
-            if ((numberToFactor % prime == 0) && prime > largestPrimeDivisor) {
-                largestPrimeDivisor = prime
-            }
-        }
-        return largestPrimeDivisor
 
     }
-
-
 }
